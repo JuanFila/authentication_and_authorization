@@ -4,7 +4,7 @@ exports.up = knex => knex.schema.createTable("users", table => {
   table.text("email").notNullable();
   table.text("password").notNullable();
   table
-  .enum("role",["admin", "customer"], {useNative: true, enumName: "roles"})
+  .enum("role",["admin", "customer", "sale"], {useNative: true, enumName: "roles"})
   .notNullable().default("customer")
   ; //Enum serve como uma lista o qual trava somente as 2 opções dentro do array podendo  usar mais 
   table.timestamp("created_at").default(knex.fn.now());
