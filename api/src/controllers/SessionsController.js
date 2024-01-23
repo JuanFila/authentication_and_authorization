@@ -27,6 +27,8 @@ class SessionsController {
       expiresIn
     });
 
+    delete user.password // não manda o password para o front-end
+
     response.status(201).json({ token, user });
   }
 }
